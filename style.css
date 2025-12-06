@@ -1,0 +1,239 @@
+/* --- Reset / เบื้องต้น --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f9f9ff;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Layout containers --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header / Nav --- */
+.main-header {
+    background-color: #e0d7f5;  /* ม่วงอ่อน */
+    padding: 10px 0;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5b3e9e;
+}
+.search-form {
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+}
+.search-form input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+}
+.search-form button {
+    padding: 8px 12px;
+    background-color: #5b3e9e;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.nav-menu a {
+    margin-left: 15px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+.nav-menu a:hover {
+    background-color: #d1c4e9;
+}
+
+/* --- Hero / Banner --- */
+.hero {
+    position: relative;
+    height: 400px;
+    background: url("../images/a1.jpg") center/cover no-repeat;  /* ตัวอย่างใช้ a1.jpg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.hero .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+    position: relative;
+    text-align: center;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #7e57c2;  /* ม่วง-ish */
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+.btn-primary:hover {
+    background-color: #5b39b6;
+}
+
+/* --- Recommend section --- */
+.recommend-section {
+    padding: 40px 0;
+    text-align: center;
+}
+.recommend-section h2 {
+    margin-bottom: 30px;
+    color: #5b3e9e;
+}
+.recommend-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+.book-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.book-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #5b3e9e;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #e0d7f5;
+    padding: 20px 0;
+    text-align: center;
+    color: #5b3e9e;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+    }
+    .search-form {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .nav-menu a {
+        margin: 5px;
+    }
+    .hero {
+        height: 300px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ปรับให้ responsive */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.detail-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.book-img {
+    flex: 1;
+}
+
+.book-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.book-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-info h2 {
+    color: #5b3e9e;
+    margin-bottom: 20px;
+}
+
+.detail-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.price {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .detail-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .book-info {
+        margin-top: 20px;
+    }
+}
+
